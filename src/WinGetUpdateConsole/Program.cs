@@ -13,14 +13,14 @@ var lines = update.Split("\n").SkipWhile(line => !line.Contains(titleid)).ToArra
 
 var title = lines.FirstOrDefault() ?? string.Empty;
 var idStart = title.IndexOf(titleid) + 3;
-var idLength = titleid.Length + title.Skip(idStart + titleid.Length).TakeWhile(c => c == ' ').Count();
 
 var packages = lines.Skip(2).Reverse().Skip(2).Reverse();
 
-var ids = packages.Select(package => new string(package.Skip(idStart).Take(idLength + 1).ToArray())).ToArray();
+var ids = packages.Select(package => new string(package.Skip(idStart).TakeWhile(c => c != ' ').ToArray())).ToArray();
 
 Parallel.ForEach(ids, id =>
 {
+    Console.WriteLine($"{id} =>\n");
     Console.WriteLine(process.Start($"{wingetupdate} {id}"));
 });
 
