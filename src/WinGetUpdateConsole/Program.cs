@@ -1,4 +1,6 @@
-﻿const string wingetupdate = "winget update";
+﻿using System.Text;
+
+const string wingetupdate = "winget update";
 const string titleid = " ID ";
 IProcessService process = new ProcessService();
 
@@ -11,8 +13,14 @@ string update = "";
 
 var lines = update.Split("\n").SkipWhile(line => !line.Contains(titleid)).ToArray();
 
-var title = lines.FirstOrDefault() ?? string.Empty;
-var idStart = title.IndexOf(titleid) + 3;
+int idStart = default;
+{
+
+    var title = lines.FirstOrDefault() ?? string.Empty;
+    var titleName = title.Substring(0, (title.IndexOf(titleid) + 1));
+    var titleNameMultiBytecCount = titleName.Count(c => System.Text.Encoding.UTF8.GetByteCount(c.ToString()) != 1);
+    idStart = title.IndexOf(titleid) + 1 + titleNameMultiBytecCount;
+}
 
 var packages = lines.Skip(2).Reverse().Skip(2).Reverse();
 
