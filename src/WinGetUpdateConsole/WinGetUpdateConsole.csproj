@@ -16,7 +16,7 @@
 		<Authors>Rksoftware</Authors>
 		<RootNamespace>Rksoftware.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<AssemblyVersion></AssemblyVersion>
-		<Version>$(VersionPrefix)0.1.0</Version>
+		<Version>$(VersionPrefix)0.1.1</Version>
 
 		<Title>auto winget update</Title>
 		<Description>auto winget update</Description>
