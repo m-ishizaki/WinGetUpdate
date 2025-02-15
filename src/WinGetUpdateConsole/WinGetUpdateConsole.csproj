@@ -1,44 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<OutputType>Exe</OutputType>
+	<TargetFramework>net9.0</TargetFramework>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<Nullable>enable</Nullable>
 
- 		<AssemblyName>Rksoftware.$(MSBuildProjectName)</AssemblyName>
-		<PackAsTool>true</PackAsTool>
+	<AssemblyName>Rksoftware.$(MSBuildProjectName)</AssemblyName>
+	<PackAsTool>true</PackAsTool>
 
-		<ToolCommandName>WinGetUpdate</ToolCommandName>
-		<PackageOutputPath>./nupkg</PackageOutputPath>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageId>$(AssemblyName)</PackageId>
-		<Authors>Rksoftware</Authors>
-		<RootNamespace>Rksoftware.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<AssemblyVersion></AssemblyVersion>
-		<Version>$(VersionPrefix)0.1.1</Version>
+	<ToolCommandName>WinGetUpdate</ToolCommandName>
+	<PackageOutputPath>./nupkg</PackageOutputPath>
+	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<PackageId>$(AssemblyName)</PackageId>
+	<Authors>Rksoftware</Authors>
+	<RootNamespace>Rksoftware.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+	<AssemblyVersion></AssemblyVersion>
+	<Version>$(VersionPrefix)0.1.2</Version>
+	<DebugType>none</DebugType>
 
-		<Title>auto winget update</Title>
-		<Description>auto winget update</Description>
-		<Summary>auto winget update</Summary>
-		<PackageProjectUrl>https://github.com/m-ishizaki/WinGetUpdate</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/m-ishizaki/WinGetUpdate</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Copyright>m-ishizaki</Copyright>
-		<PackageReleaseNotes>Improved output display.</PackageReleaseNotes>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Title>auto winget update</Title>
+	<Description>auto winget update</Description>
+	<Summary>auto winget update</Summary>
+	<PackageProjectUrl>https://github.com/m-ishizaki/WinGetUpdate</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/m-ishizaki/WinGetUpdate</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<Copyright>m-ishizaki</Copyright>
+	<PackageReleaseNotes>Improved output display.</PackageReleaseNotes>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
-	<ItemGroup>
-		<None Include="..\..\LICENSE" Pack="true" PackagePath="" />
-	</ItemGroup>
+  <ItemGroup>
+	<None Include="..\..\LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<None Update="README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
+  <ItemGroup>
+	<None Update="README.md">
+	  <Pack>True</Pack>
+	  <PackagePath>\</PackagePath>
+	</None>
+  </ItemGroup>
 
 </Project>
